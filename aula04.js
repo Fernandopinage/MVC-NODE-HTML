@@ -14,7 +14,7 @@ const servidor = http.createServer((request,response)=>{
 
             response.write(arquivo)
 
-            return response.end();
+            response.end();
 
     });
 }).listen(port,host,()=>{
