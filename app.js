@@ -37,21 +37,7 @@ App.post('/login/validar', (request, responser) => {
                 responser.render('../views/login');
             } else {
                 
-                sql = "select * from `usuario` where 1";
-
-                con.query(sql, (err, resultado, filds) => {
-
-
-                    if (err) {
-                        console.log('Erro ao trazer o resultando' + err)
-                    } else {
-                        console.log(resultado)
-                        responser.render("../views/home", { lista: resultado });
-
-                    }
-
-                });
-
+                responser.redirect('/home');
             }
         }
     });
