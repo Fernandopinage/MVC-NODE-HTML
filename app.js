@@ -113,6 +113,32 @@ App.post('/insert/user/', (request, responser) => {
 
 })
 
+App.get('/edit/:id',(request,responser)=>{
+
+    var id = request.params.id
+  
+
+    sql = "select * from usuario where id_user = "+id+"";
+
+    con.query(sql,(err,resultado)=>{
+
+        if(err){
+            console.log(err)
+
+        }else{
+            
+            console.log(resultado)
+            responser.render('../views/update',{lista:resultado});
+
+        }
+
+    })
+
+
+});
+
+
+
 App.get('/delete/:id', (request, responser) => {
 
     var id = request.params.id
